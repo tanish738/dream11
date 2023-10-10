@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Match Day </title>
+</head>
+<body>
+<form method="POST" >
+{% csrf_token %}
+  <select name="team1">
+    {% for team in teams %}
+      <option value="{{ team.id }}">{{ team.name }}</option>
+    {% endfor %}
+  </select> 
+<h1> VS </h1>
+  <select name="team2">
+    {% for team in teams %}
+      <option value="{{ team.id }}">{{ team.name }}</option>
+    {% endfor %}
+  </select>
+<button type="submit">Submit</button>
+</form>
+<div> 
+<h3>{{ team1.name }}</h3>
+  {% for pair in pair1 %}
+    {% for player in pair %}
+      {{ player.name }} - 
+    {% endfor %}
+    <br>
+  {% endfor %}
+</div>
+<div>
+<h3>{{ team2.name }}</h3>
+  {% for pair in pair2 %}
+    {% for player in pair %}
+      {{ player.name }} - 
+    {% endfor %}
+    <br>
+  {% endfor %}
+</div>  
+
+<div>
+<h3>{{ team2.name }}</h3>
+  {% for pair in pair3 %}
+    {% for player in pair %}
+      {{ player.name }} - 
+    {% endfor %}
+    <br>
+  {% endfor %}
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Team Form</title>
+</head>
+<body>
+  <h1>Team Form</h1>
+    {% for team in teams %}
+        <li>{{ team.name }}</li>
+    {% endfor %}
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

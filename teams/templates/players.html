@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Player Form</title>
+</head>
+<body>
+  <h1>Player Form</h1>
+    {% for player in players %}
+        <li>{{ player.name }}</li>
+    {% endfor %}
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
